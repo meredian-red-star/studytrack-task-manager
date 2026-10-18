@@ -72,13 +72,29 @@ button {
 
 input,
 select {
+  color-scheme: light;
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
   border: 1px solid #9aa6bc;
   border-radius: 6px;
   background: #fff;
-  color: inherit;
+  color: #243047;
+}
+
+select:hover {
+  background: #f3f5fb;
+}
+
+select option {
+  background: #fff;
+  color: #243047;
+}
+
+select option:hover,
+select option:checked {
+  background: #e4e8fb;
+  color: #243047;
 }
 
 button {
@@ -102,20 +118,34 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-.form-note,
 .empty-state {
   color: #596579;
-}
-
-.form-note {
-  margin-bottom: 0;
-  font-size: 0.875rem;
 }
 
 #task-list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.task-card {
+  padding: 16px;
+  border: 1px solid #dce1ed;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.task-card + .task-card {
+  margin-top: 16px;
+}
+
+.task-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+}
+
+.task-card p {
+  margin: 4px 0;
 }
 
 /* Stack the date and status fields on smaller screens. */
