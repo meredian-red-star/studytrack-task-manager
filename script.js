@@ -25,7 +25,17 @@ taskForm.addEventListener("submit", function (event) {
   const status = document.createElement("p");
   status.textContent = "Status: " + statusInput.selectedOptions[0].text;
 
-  task.append(title, subject, deadline, status);
+  const deleteButton = document.createElement("button");
+  deleteButton.type = "button";
+  deleteButton.className = "delete-button";
+  deleteButton.textContent = "Delete";
+
+  deleteButton.addEventListener("click", function () {
+    task.remove();
+    emptyState.hidden = taskList.children.length > 0;
+  });
+
+  task.append(title, subject, deadline, status, deleteButton);
   taskList.appendChild(task);
   emptyState.hidden = true;
   taskForm.reset();

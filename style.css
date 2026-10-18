@@ -148,6 +148,12 @@ button:focus-visible {
   margin: 4px 0;
 }
 
+.delete-button {
+  margin-top: 12px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}
+
 /* Stack the date and status fields on smaller screens. */
 @media (max-width: 480px) {
   .form-row {
