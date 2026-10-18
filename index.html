@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyTrack | Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>StudyTrack</h1>
+      <p>Your student task manager</p>
+    </header>
+
+    <section class="card" aria-labelledby="form-heading">
+      <h2 id="form-heading">New task</h2>
+      <form id="task-form">
+        <div class="form-field">
+          <label for="task-title">Task title</label>
+          <input type="text" id="task-title" name="title" placeholder="e.g. Finish chapter 3 exercises" required>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="e.g. Mathematics" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="deadline">Deadline</label>
+            <input type="date" id="deadline" name="deadline" required>
+          </div>
+
+          <div class="form-field">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="not-started">Not started</option>
+              <option value="in-progress">In progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Add task</button>
+        <p class="form-note">UI preview: adding tasks is not available yet.</p>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading">Your tasks</h2>
+      <p class="empty-state">No tasks yet. Your tasks will appear here.</p>
+      <ul id="task-list" aria-label="Student tasks"></ul>
+    </section>
+  </main>
+</body>
+</html>

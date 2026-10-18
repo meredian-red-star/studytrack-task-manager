@@ -1,0 +1,131 @@
+/* Page layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f5fb;
+  color: #243047;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0;
+  color: #3749a6;
+  font-size: 2rem;
+}
+
+.app-header p {
+  margin: 4px 0 0;
+}
+
+.card {
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid #dce1ed;
+  border-radius: 12px;
+  background: #fff;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+}
+
+/* Form controls */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+  min-width: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #9aa6bc;
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+}
+
+button {
+  min-height: 44px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 6px;
+  background: #3749a6;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2a3882;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid #6679d6;
+  outline-offset: 3px;
+}
+
+.form-note,
+.empty-state {
+  color: #596579;
+}
+
+.form-note {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
+
+#task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Stack the date and status fields on smaller screens. */
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
