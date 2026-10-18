@@ -49,6 +49,15 @@
 
     <section class="card" aria-labelledby="tasks-heading">
       <h2 id="tasks-heading">Your tasks</h2>
+      <div class="form-field">
+        <label for="status-filter">Filter by status</label>
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="not-started">Not Started</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
       <p class="empty-state">No tasks yet. Your tasks will appear here.</p>
       <ul id="task-list" aria-label="Student tasks"></ul>
     </section>

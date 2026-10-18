@@ -123,6 +123,8 @@ button:focus-visible {
 }
 
 #task-list {
+  display: grid;
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -133,10 +135,6 @@ button:focus-visible {
   border: 1px solid #dce1ed;
   border-radius: 6px;
   overflow-wrap: anywhere;
-}
-
-.task-card + .task-card {
-  margin-top: 16px;
 }
 
 .task-card h3 {

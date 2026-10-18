@@ -6,7 +6,10 @@ const subjectInput = document.getElementById("subject");
 const deadlineInput = document.getElementById("deadline");
 const statusInput = document.getElementById("status");
 const submitButton = taskForm.querySelector('button[type="submit"]');
+const statusFilter = document.getElementById("status-filter");
 let editingTask = null;
+
+statusFilter.addEventListener("change", filterTasks);
 
 taskForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -26,9 +29,25 @@ taskForm.addEventListener("submit", function (event) {
     taskList.appendChild(task);
   }
 
-  emptyState.hidden = true;
+  filterTasks();
   resetForm();
 });
+
+function filterTasks() {
+  let visibleTasks = 0;
+
+  for (const task of taskList.children) {
+    task.hidden = statusFilter.value !== "all" && task.dataset.status !== statusFilter.value;
+    if (!task.hidden) {
+      visibleTasks++;
+    }
+  }
+
+  emptyState.hidden = visibleTasks > 0;
+  emptyState.textContent = taskList.children.length === 0
+    ? "No tasks yet. Your tasks will appear here."
+    : "No tasks match this status.";
+}
 
 function resetForm() {
   taskForm.reset();
@@ -76,7 +95,7 @@ function createTask() {
       resetForm();
     }
     task.remove();
-    emptyState.hidden = taskList.children.length > 0;
+    filterTasks();
   });
 
   task.append(title, subject, deadline, status, editButton, deleteButton);
