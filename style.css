@@ -13,13 +13,13 @@ body {
 
 .app {
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 32px 20px;
+  padding: 36px 20px;
 }
 
 .app-header {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 h1 {
@@ -33,15 +33,16 @@ h1 {
 }
 
 .card {
-  margin-bottom: 24px;
-  padding: 24px;
+  margin-bottom: 28px;
+  padding: 28px;
   border: 1px solid #dce1ed;
   border-radius: 12px;
   background: #fff;
+  box-shadow: 0 2px 8px rgba(36, 48, 71, 0.04);
 }
 
 h2 {
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   font-size: 1.25rem;
 }
 
@@ -49,15 +50,15 @@ h2 {
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
+  gap: 8px;
+  margin-bottom: 22px;
   min-width: 0;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
 }
 
 label {
@@ -77,7 +78,7 @@ select {
   min-height: 44px;
   padding: 10px 12px;
   border: 1px solid #9aa6bc;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #fff;
   color: #243047;
 }
@@ -99,16 +100,17 @@ select option:checked {
 
 button {
   min-height: 44px;
-  padding: 10px 24px;
+  padding: 10px 20px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #3749a6;
   color: #fff;
+  font-weight: 600;
   cursor: pointer;
 }
 
 button:hover {
-  background: #2a3882;
+  background: #304195;
 }
 
 input:focus-visible,
@@ -131,9 +133,9 @@ button:focus-visible {
 }
 
 .task-card {
-  padding: 16px;
+  padding: 18px;
   border: 1px solid #dce1ed;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow-wrap: anywhere;
 }
 
@@ -158,8 +160,8 @@ button:focus-visible {
 
 .edit-button,
 .delete-button {
-  margin-top: 12px;
-  padding: 6px 12px;
+  margin-top: 16px;
+  padding: 8px 16px;
   font-size: 0.875rem;
 }
 
