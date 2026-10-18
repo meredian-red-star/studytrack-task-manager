@@ -47,6 +47,12 @@ function updateTask(task, data) {
   task.querySelector(".task-subject").textContent = "Subject: " + data.subject;
   task.querySelector(".task-deadline").textContent = "Deadline: " + data.deadline;
   task.querySelector(".task-status").textContent = "Status: " + statusLabels[data.status];
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const deadline = new Date(data.deadline + "T00:00:00");
+  const isOverdue = deadline < today && data.status !== "completed";
+  task.querySelector(".overdue-label").hidden = !isOverdue;
 }
 
 function saveTasks() {
@@ -119,6 +125,11 @@ function createTask() {
 
   const title = document.createElement("h3");
 
+  const overdueLabel = document.createElement("span");
+  overdueLabel.className = "overdue-label";
+  overdueLabel.textContent = "Overdue";
+  overdueLabel.hidden = true;
+
   const subject = document.createElement("p");
   subject.className = "task-subject";
 
@@ -157,7 +168,7 @@ function createTask() {
     filterTasks();
   });
 
-  task.append(title, subject, deadline, status, editButton, deleteButton);
+  task.append(title, overdueLabel, subject, deadline, status, editButton, deleteButton);
   return task;
 }
 
